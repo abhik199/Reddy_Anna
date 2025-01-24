@@ -17,11 +17,11 @@ app.use(express.static(path.join(__dirname, "../public")));
 // Define a route
 
 // admin routes
-app.use("/admin", require("./routes/admin/adminR"));
+app.use("/", require("./routes/admin/adminR"));
 
-app.get("/", (req, res) => {
-  res.render("index", { title: "Welcome to EJS", message: "Hello, EJS!" });
-});
+// app.get("/", (req, res) => {
+//   res.render("index", { title: "Welcome to EJS", message: "Hello, EJS!" });
+// });
 
 // Start the server
 const PORT = process.env.PORT || 3000;
