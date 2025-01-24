@@ -9,5 +9,8 @@ const admin_router = Router();
 admin_router.get("/", (req, res) => {
   res.render("login");
 });
+admin_router.get("/dashboard", (req, res) => {
+  res.render("index");
+});
 
 module.exports = admin_router;
