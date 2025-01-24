@@ -2,6 +2,9 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 require("../conf/database");
 
@@ -18,6 +21,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 // admin routes
 app.use("/", require("./routes/admin/adminR"));
+app.use("/api/auth", require("./routes/routes/authRoutes"));
 
 // app.get("/", (req, res) => {
 //   res.render("index", { title: "Welcome to EJS", message: "Hello, EJS!" });
